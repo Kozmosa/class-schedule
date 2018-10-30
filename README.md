@@ -1,2 +1,2 @@
 # class-schedule
-This is a HTML and MDUI based Class Schedule project
+This Project is Open Source Code in MIT License.
