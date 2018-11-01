@@ -127,3 +127,7 @@ function warmTip() {
   mdui.alert("Please check the things of school before, then go to school.","Warm tips");
   mdui.alert("The things like your : ID Card , Textbook , The homework of last night ...","Warm tips");
 }
+
+function playVideo(url) {
+  //Get url by params
+}
