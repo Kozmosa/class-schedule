@@ -1,3 +1,10 @@
+/*
+Program Name:Class Schedule
+Author Name: Xuyang1638
+Author's school: Wuning No.2 Middle School
+Program Version:in index.html and readme file.
+*/
+
 function getContent(day) {
     var monday = {
         "one":"语文",

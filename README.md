@@ -6,6 +6,8 @@ But, I hope you using the project in your own project time, Write my name and in
 
 Project Infomation:
 
+- Project Name: Class Schedule
+- Version: 0.1.2 Beta
 - Author: Xuyang1638
 - Author's School: Wuning No.2 Middle School in China, Jiangxi
 - Using Language: HTML, CSS, Javascript.
