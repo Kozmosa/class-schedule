@@ -104,14 +104,19 @@ function get_element(id) {
 	return x;
 }
 
-function getQueryString(name) { 
-    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
-    var r = window.location.search.substr(1).match(reg); 
-    if (r != null) return unescape(r[2]); return null; 
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
 }
 
 function getQueue() {
     // Get
     href = window.location.href;
     console.log(href)
+}
+
+function warmTip() {
+  mdui.alert("Please check the things of school before, then go to school.","Warm tips");
+  mdui.alert("The things like your : ID Card , Textbook , The homework of last night ...","Warm tips");
 }
