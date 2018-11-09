@@ -14,6 +14,7 @@ Author: Xuyang1638
     <link href="css/bootstrap.css">
     <link href="css/bootstrap-grid.css">
     <link href="css/index.css">
+    <script src="js/main.js"></script>
 
     <link href="https://cdn.bootcss.com/mdui/0.4.1/css/mdui.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/mdui/0.4.1/js/mdui.min.js"></script>
@@ -45,7 +46,7 @@ Author: Xuyang1638
     <title>Class Schedule 课程表 - 开发：徐阳</title>
 </head>
 
-<body>
+<body onload="warmTip();">
     <div class="container">
         <div id="view_container" class="view_container">
             <div id="header" class="header">
@@ -59,7 +60,7 @@ Author: Xuyang1638
 
             <div id="body" style="text-align: center">
                 <h2 class="blue">选择课程表</h2>
-                <a href="perDay/monday.html" class="mdui-btn mdui-ripple mdui-color-pink">星期一</a> <br>
+                <a href="perDay/monday.html" onclick="warmTip();" class="mdui-btn mdui-ripple mdui-color-pink">星期一</a> <br>
                 <p> </p>
                 <a href="perDay/tuesday.html" class="mdui-btn mdui-ripple mdui-color-pink">星期二</a> <br>
                 <p> </p>

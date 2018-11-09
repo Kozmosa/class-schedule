@@ -131,3 +131,7 @@ function warmTip() {
 function playVideo(url) {
   //Get url by params
 }
+
+function getTime() {
+    //
+}
