@@ -1,0 +1,22 @@
+{
+  "name": "class-schedule",
+  "version": "1.0.0",
+  "description": "This Project is Open Source Code in MIT License.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xuyang1638/class-schedule.git"
+  },
+  "author": "Xuyang1638",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Xuyang1638/class-schedule/issues"
+  },
+  "homepage": "https://github.com/Xuyang1638/class-schedule#readme"
+}
