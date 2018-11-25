@@ -4,15 +4,119 @@ Version: In Readme file and index.html
 Author: Xuyang1638
  -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Class Schedule API</title>
-	<meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/index.css">
+    <link href="https://cdn.bootcss.com/mdui/0.4.1/css/mdui.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/mdui/0.4.1/js/mdui.min.js"></script>
+    <style>
+        .center {
+            text-align: center;
+        }
+    </style>
+    <style>
+        /*body {
+        background-color: #fff3cd;
+        }*/
+        .white {
+            color: #ffffff;
+        }
+
+        .blue {
+            color: #005cbf;
+        }
+
+        .black {
+            color: #000000;
+        }
+
+        .view_container {
+            color: #fff3cd;
+        }
+    </style>
+    <title>Class Schedule - By Xuyang1638</title>
 </head>
-<body id="bdy">
-	<div id="return-container"></div>
-	<script src="js/main.js"></script>
-	<script>
+
+<body class="mdui-theme-primary-pink">
+    <div class="mdui-toolbar mdui-color-theme">
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <span class="mdui-typo-title">课程表</span>
+        <div class="mdui-toolbar-spacer"></div>
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></a>
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">more_vert</i></a>
+    </div>
+    <div class="mdui-container">
+        <div id="body" style="text-align: center">
+            <h2> </h2>
+            <h2 class="black">Monday | 星期一</h2>
+            <ul class="mdui-list container">
+                <li class="mdui-list-item mdui-ripple mdui-color-pink">
+                    <div class="mdui-list-item-content">
+                        <div class="mdui-list-item-title" id="class-1">语文</div>
+                    </div>
+                    <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
+                </li>
+                <p></p>
+                <li class="mdui-list-item mdui-ripple mdui-color-pink">
+                    <div class="mdui-list-item-content">
+                        <div class="mdui-list-item-title" id="class-2">英语</div>
+                    </div>
+                    <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
+                </li>
+                <p></p>
+                <li class="mdui-list-item mdui-ripple mdui-color-pink">
+                    <div class="mdui-list-item-content">
+                        <div class="mdui-list-item-title" id="class-3">英语</div>
+                    </div>
+                    <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
+                </li>
+                <p></p>
+                <li class="mdui-list-item mdui-ripple mdui-color-pink">
+                    <div class="mdui-list-item-content">
+                        <div class="mdui-list-item-title" id="class-4">信息</div>
+                    </div>
+                    <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
+                </li>
+                <p></p>
+                <li class="mdui-list-item mdui-ripple mdui-color-blue">
+                    <div class="mdui-list-item-content">
+                        <div class="mdui-list-item-title"> 午休 </div>
+                    </div>
+                    <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
+                </li>
+                <p></p>
+                <li class="mdui-list-item mdui-ripple mdui-color-pink">
+                    <div class="mdui-list-item-content">
+                        <div class="mdui-list-item-title" id="class-5">美术</div>
+                    </div>
+                    <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
+                </li>
+                <p></p>
+                <li class="mdui-list-item mdui-ripple mdui-color-pink">
+                    <div class="mdui-list-item-content">
+                        <div class="mdui-list-item-title" id="class-6">数学</div>
+                    </div>
+                    <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
+                </li>
+                <p></p>
+                <li class="mdui-list-item mdui-ripple mdui-color-pink">
+                    <div class="mdui-list-item-content">
+                        <div class="mdui-list-item-title" id="class-7">班会</div>
+                    </div>
+                    <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
+                </li>
+                <p></p>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script>
         //Solve URL Arguments
         var day = getQueryString("day");
 
@@ -20,8 +124,16 @@ Author: Xuyang1638
         var content = getContent(day);
 
         //Change Return
-        var x = document.getElementById('bdy');
-        bdy.innerHTML = content;
+        for (var i = 1; i < 7; i++) {
+            document.getElementById('class-' + i.toString()).innerText = content[i.toString()]; // Change every class content
+        }
+
+        if (window.console) {
+            console.groupCollapsed('%c课程表 by Xuyang1638', 'color:#009a61; font-size: 28px; font-weight: 300');
+            console.log('%chttps://github.com/xuyang1638\n-------------\n欢迎在Github上发Issue和Pull Request!', 'color:#009a61');
+            console.groupEnd();
+        }
     </script>
 </body>
+
 </html>
