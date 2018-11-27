@@ -28,10 +28,6 @@ Author: Xuyang1638
         .blue {
             color: #005cbf;
         }
-
-        .view_container {
-            color: #fff3cd;
-        }
     </style>
     <title>Class Schedule - 开发：徐阳</title>
 </head>
@@ -51,6 +47,26 @@ Author: Xuyang1638
                 <h2 id="jinrishici-sentence" style="font-size: 20px; color: black;">正在加载今日诗词....</h2>
                 <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
                 <h2 class="blue">选择课程表</h2>
+                <select id="daySelect" class="mdui-select" mdui-select position="auto">
+                    <option value="1">Monday</option>
+                    <option value="2">Tuesday</option>
+                    <option value="3">Wednesday</option>
+                    <option value="4">Thursday</option>
+                    <option value="5">Friday</option>
+                </select>
+
+                <br />
+                <h2> </h2>
+
+                <button class="mdui-btn mdui-color-theme mdui-ripple mdui-btn-raised" onclick="enterClassesPage();">
+                    Submit | 查看
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!--
+                    已经弃用的方式，生成dist的时候会自动删除注释
                 <a href="perDay/monday.html" onclick="warmTip();" class="mdui-btn mdui-ripple mdui-color-pink">星期一</a>
                 <br>
                 <p> </p>
@@ -61,13 +77,14 @@ Author: Xuyang1638
                 <a href="perDay/thursday.html" class="mdui-btn mdui-ripple mdui-color-pink">星期四</a> <br>
                 <p></p>
                 <a href="perDay/friday.html" class="mdui-btn mdui-ripple mdui-color-pink">星期五</a> <br>
-            </div>
-        </div>
-        <div style="padding: buttom; text-align: center;">
-            <p>
-                Powered by <a href="https://github.com/xuyang1638" style="color: black;">Xuyang1638</a>
-            </p>
-        </div>
+                -->
+    </div>
+    </div>
+    <div style="padding: buttom; text-align: center;">
+        <p>
+            Powered by <a href="https://github.com/xuyang1638" style="color: black;">Xuyang1638</a>
+        </p>
+    </div>
     </div>
     <script>
         mdui.snackbar({

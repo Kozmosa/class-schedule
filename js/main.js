@@ -7,13 +7,13 @@ Program Version:in index.html and readme file.
 
 function getContent(day) {
     var monday = {
-        "1":"语文",
-        "2":"英语",
-        "3":"英语",
-        "4":"信息",
-        "5":"美术",
-        "6":"数学",
-        "7":"班会"
+        "1": "语文",
+        "2": "英语",
+        "3": "英语",
+        "4": "信息",
+        "5": "美术",
+        "6": "数学",
+        "7": "班会"
     };
 
     var tuesday = {
@@ -79,11 +79,37 @@ function getContent(day) {
     };
 }
 
+function getTitle(day) {
+    var days = {
+        '1': 'Monday | 星期一',
+        '2': 'Tuesday | 星期二',
+        '3': 'Wednesday | 星期三',
+        '4': 'Thursday | 星期四',
+        '5': 'Friday | 星期五',
+    };
+
+    return days[day];
+}
+
+function getSelect() {
+    var select = document.getElementById('daySelect');
+    var index = daySelect.selectedIndex; //序号，取当前选中选项的序号
+    var val = daySelect.options[index].value;
+    return val;
+}
+
+function enterClassesPage() {
+    // Enter Class Page
+    var selectDay = getSelect();
+    window.open('perDay.api.html?day=' + selectDay);
+    console.log('OK.');
+}
+
 function solveUrl(argv_name) {
-	//Solve by function GetRequest()
-	var request = GetRequest();
-	var argv = request[argv_name];
-	return argv;
+    //Solve by function GetRequest()
+    var request = GetRequest();
+    var argv = request[argv_name];
+    return argv;
 }
 
 function GetRequest() {
@@ -93,28 +119,29 @@ function GetRequest() {
         var str = url.substr(1);
         strs = str.split("&");
         console.log(strs)
-        for(var i = 0; i < strs.length; i ++) {
-            theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+        for (var i = 0; i < strs.length; i++) {
+            theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
         }
     }
     return theRequest;
 }
 
 function change_text(element, content) {
-	//Get element by params
-	element.innerHTML = content;
+    //Get element by params
+    element.innerHTML = content;
 }
 
 function get_element(id) {
-	//Get element by id
-	var x = document.getElementById(id);
-	return x;
+    //Get element by id
+    var x = document.getElementById(id);
+    return x;
 }
 
 function getQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
     var r = window.location.search.substr(1).match(reg);
-    if (r != null) return unescape(r[2]); return null;
+    if (r != null) return unescape(r[2]);
+    return null;
 }
 
 function getQueue() {
@@ -124,12 +151,12 @@ function getQueue() {
 }
 
 function warmTip() {
-  mdui.alert("Please check the things of school before, then go to school.","Warm tips");
-  mdui.alert("The things like your : ID Card , Textbook , The homework of last night ...","Warm tips");
+    mdui.alert("Please check the things of school before, then go to school.", "Warm tips");
+    mdui.alert("The things like your : ID Card , Textbook , The homework of last night ...", "Warm tips");
 }
 
 function playVideo(url) {
-  //Get url by params
+    //Get url by params
 }
 
 function getTime() {
