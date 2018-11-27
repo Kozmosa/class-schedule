@@ -1,4 +1,6 @@
-# class-schedule
+# Class-schedule
+
+Online Demo: [Class-Schedule](https://xuyang1638.github.io/class-schedule)
 
 This Project is Open Source Code in MIT License.
 
