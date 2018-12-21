@@ -179,12 +179,28 @@ Author: Xuyang1638
 
         //Change Return
         for (var i = 1; i < 8; i++) {
-            document.getElementById('class-' + i.toString()).innerText = content[i.toString()]; // Change every class content
+            document.getElementById('class-' + i.toString()).innerText = content[i.toString()]; // Change content
+            /* 
+                'class-' is meaning class and -
+                i.toString() is meaning Index Variable i's String
+                Why?
+                I use String to be index in the JSON Datas
+            */
         }
 
         //Change Title
         var x = document.getElementById('title');
         x.innerText = getTitle(day);
+
+        // Alert Contest Risks Warning
+        var result = checkContestRisk();
+        if (result['risk'] == true) {
+            mdui.alert('Today has ' + result['type'] + ' Contest Risk!!!', "Warning: Contest Risk");
+        }
+
+        mdui.snackbar({
+            message: "软件开发：武宁二中初一(19)班 徐阳",
+        });
 
         if (window.console) {
             console.groupCollapsed('%c课程表 by Xuyang1638', 'color:#009a61; font-size: 28px; font-weight: 300');

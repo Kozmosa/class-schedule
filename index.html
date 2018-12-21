@@ -47,38 +47,27 @@ Author: Xuyang1638
                 <h2 id="jinrishici-sentence" style="font-size: 20px; color: black;">正在加载今日诗词....</h2>
                 <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
                 <h2 class="blue">选择课程表</h2>
-                <select id="daySelect" class="mdui-select" mdui-select position="auto">
-                    <option value="1">Monday</option>
-                    <option value="2">Tuesday</option>
-                    <option value="3">Wednesday</option>
-                    <option value="4">Thursday</option>
-                    <option value="5">Friday</option>
-                </select>
+                <div id="selectArea" style="display: none;">
+                    <select id="daySelect" class="mdui-select" mdui-select position="auto">
+                        <option value="1">Monday</option>
+                        <option value="2">Tuesday</option>
+                        <option value="3">Wednesday</option>
+                        <option value="4">Thursday</option>
+                        <option value="5">Friday</option>
+                    </select>
+
+                    <button class="mdui-btn mdui-color-theme mdui-ripple mdui-btn-raised" onclick="enterClassesPage();">
+                        Submit | 查看
+                    </button>
+                </div>
+
+                <button class="mdui-btn mdui-color-theme mdui-ripple" onclick="">今天的课程</button>
+                <button class="mdui-btn mdui-color-theme mdui-ripple" onclick="">明天的课程</button>
 
                 <br />
                 <h2> </h2>
-
-                <button class="mdui-btn mdui-color-theme mdui-ripple mdui-btn-raised" onclick="enterClassesPage();">
-                    Submit | 查看
-                </button>
             </div>
         </div>
-    </div>
-
-    <!--
-                    已经弃用的方式，生成dist的时候会自动删除注释
-                <a href="perDay/monday.html" onclick="warmTip();" class="mdui-btn mdui-ripple mdui-color-pink">星期一</a>
-                <br>
-                <p> </p>
-                <a href="perDay/tuesday.html" class="mdui-btn mdui-ripple mdui-color-pink">星期二</a> <br>
-                <p> </p>
-                <a href="perDay/wednesday.html" class="mdui-btn mdui-ripple mdui-color-pink">星期三</a> <br>
-                <p> </p>
-                <a href="perDay/thursday.html" class="mdui-btn mdui-ripple mdui-color-pink">星期四</a> <br>
-                <p></p>
-                <a href="perDay/friday.html" class="mdui-btn mdui-ripple mdui-color-pink">星期五</a> <br>
-                -->
-    </div>
     </div>
     <div style="padding: buttom; text-align: center;">
         <p>
@@ -88,7 +77,7 @@ Author: Xuyang1638
     </div>
     <script>
         mdui.snackbar({
-            message: 'Welcome to Use Xuyang Development App!'
+            message: '欢迎使用徐阳开发的APP!'
         });
     </script>
 </body>

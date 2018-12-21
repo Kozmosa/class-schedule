@@ -159,6 +159,42 @@ function playVideo(url) {
     //Get url by params
 }
 
-function getTime() {
-    //
+function enterTomorrowPage() {
+    var d = Date();
+    var day = d.getDay();
+    day = day + 1;
+    day = day.toString();
+    enterClassesPage(day);
+}
+
+function enterTodayPage() {
+    var d = new Date();
+    var day = d.getDay();
+    enterClassesPage(day);
+}
+
+function checkContestRisk() {
+    // Check Contest Risk by Date
+    var d = new Date();
+    var day = d.getDay(); // Get Day in a week number
+    switch (day) {
+        case 3:
+            var result = {
+                "type": "Chinese",
+                "risk": true,
+            }
+            return result;
+            break;
+
+        case 5:
+            var result = {
+                "type": "Maths",
+                "risk": true,
+            }
+            return result;
+            break;
+
+        default:
+            return false;
+    }
 }
