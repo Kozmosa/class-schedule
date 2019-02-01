@@ -157,8 +157,8 @@ function warmTip() {
 
 function enterPage(day) {
     // Day(intenger)
-    var url = './perDay.api.html?day=' + day.toString();
-    window.open(url);
+    var url = 'perDay.api.html?day=' + day.toString();
+    window.href
 }
 
 function enterTomorrowPage() {
@@ -174,13 +174,17 @@ function enterTomorrowPage() {
         mdui.alert('今天是周日，我们将为您显示周一的课程。', '提示');
     }
     day = day.toString();
-    enterPage(day);
+    enterClassesPage(day);
 }
 
 function enterTodayPage() {
     var d = new Date();
     var day = d.getDay();
-    enterPage(day);
+    if (day != 6 != 7) {
+        enterPage(day);
+    } else {
+        mdui.alert('我们将为您显示周一的课程。', 'Tips')
+    };
 }
 
 function checkContestRisk() {
