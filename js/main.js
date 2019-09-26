@@ -146,7 +146,7 @@ function warmTip() {
 function enterPage(day) {
     // Day(intenger)
     var url = 'perDay.api.html?day=' + day.toString();
-    window.href
+    window.location.href = url
 }
 
 function enterTomorrowPage() {
@@ -168,7 +168,7 @@ function enterTomorrowPage() {
 function enterTodayPage() {
     var d = new Date();
     var day = d.getDay();
-    if (day != 6 != 7) {
+    if (day) {
         enterPage(day);
     } else {
         mdui.alert('我们将为您显示周一的课程。', 'Tips')

@@ -156,6 +156,13 @@ Author: Xuyang1638
                                 <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
                             </li>
                             <p></p>
+                            <li class="mdui-list-item mdui-ripple mdui-color-indigo">
+                                <div class="mdui-list-item-content">
+                                    <div class="mdui-list-item-title" id="class-night">班会</div>
+                                </div>
+                                <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
+                            </li>
+                            <p></p>
                         </ul>
                     </div>
 
@@ -189,6 +196,12 @@ Author: Xuyang1638
                 I use String to be index in the JSON Datas
             */
         }
+
+        const nightClassEl = document.querySelector('#class-night')
+        if(content[7] === "N/A"){
+            nightClassEl.innerText = '历史'
+        } 
+        nightClassEl.innerText = content[7]
 
         //Change Title
         var x = document.getElementById('title');
