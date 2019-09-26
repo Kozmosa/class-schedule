@@ -51,7 +51,7 @@ Author: Xuyang1638
 
     <!-- Drawer Material -->
     <div class="mdui-drawer mdui-drawer-close" id="left-drawer">
-        <ul class="mdui-list">
+        <ul class="mdui-list" style="padding-top: 0%">
             <li class="image">
                 <img class="image" src="https://mdui-aliyun.cdn.w3cbus.com/docs/assets/docs/img/card.jpg">
             </li>
@@ -180,8 +180,8 @@ Author: Xuyang1638
         var content = getContent(day);
 
         //Change Return
-        for (var i = 1; i < 8; i++) {
-            document.getElementById('class-' + i.toString()).innerText = content[i.toString()]; // Change content
+        for (var i = 0; i < 7; i++) {
+            document.getElementById('class-' + (i+1).toString()).innerText = content[i]; // Change content
             /* 
                 'class-' is meaning class and -
                 i.toString() is meaning Index Variable i's String

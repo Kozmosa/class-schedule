@@ -5,77 +5,65 @@ Author's school: Wuning No.2 Middle School
 Program Version:in index.html and readme file.
 */
 function getContent(day) {
-    var monday = {
-        "1": "语文",
-        "2": "英语",
-        "3": "英语",
-        "4": "信息",
-        "5": "美术",
-        "6": "数学",
-        "7": "班会"
-    };
+    const data = {
+        "class19": [
+            [
+                "语文",
+                "数学",
+                "物理",
+                "微机",
+                "音乐",
+                "英语",
+                "班会",
+                "N/A"
+            ],
+            [
+                "语文",
+                "数学",
+                "英语",
+                "地理",
+                "阅读",
+                "健康",
+                "历史",
+                "数学"
+            ],
 
-    var tuesday = {
-        "1": "英语",
-        "2": "语文",
-        "3": "数学",
-        "4": "地理",
-        "5": "政治",
-        "6": "历史",
-        "7": "生物",
-    };
+            [
+                "英语",
+                "物理",
+                "数学",
+                "数学",
+                "语文",
+                "生物",
+                "历史",
+                "物理"
+            ],
 
-    var wednesday = {
-        "1": "数学",
-        "2": "语文",
-        "3": "英语",
-        "4": "健康",
-        "5": "语文",
-        "6": "语文",
-        "7": "阅读",
-    };
+            [
+                "语文",
+                "英语",
+                "政治",
+                "数学",
+                "地理",
+                "美术",
+                "体育",
+                "英语"
+            ],
 
-    var thursday = {
-        "1": "英语",
-        "2": "语文",
-        "3": "数学",
-        "4": "体育",
-        "5": "地理",
-        "6": "历史",
-        "7": "政治",
-    };
+            [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        ]
+    }
 
-    var friday = {
-        "1": "语文",
-        "2": "数学",
-        "3": "数学",
-        "4": "生物",
-        "5": "音乐",
-        "6": "英语",
-        "7": "体育",
-    };
-
-    switch (day) {
-        case "1":
-            return monday;
-            break;
-        case "2":
-            return tuesday;
-            break;
-        case "3":
-            return wednesday;
-            break;
-        case "4":
-            return thursday;
-            break;
-        case "5":
-            return friday;
-            break;
-        default:
-            return "unknow param";
-            console.log("unknow param");
-            break;
-    };
+    return data.class19[day-1]
 }
 
 
