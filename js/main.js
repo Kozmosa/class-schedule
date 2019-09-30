@@ -51,14 +51,14 @@ function getContent(day) {
             ],
 
             [
+                "语文",
+                "英语",
+                "数学",
+                "物理",
                 "",
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                ""
+                "语文"
             ]
         ]
     }
@@ -86,21 +86,8 @@ function getSelect() {
     return val;
 }
 
-function enterClassesPage() {
-    // Enter Class Page
-    var selectDay = getSelect();
-    window.open('perDay.api.html?day=' + selectDay);
-    console.log('OK.');
-}
-
 function solveUrl(argv_name) {
     //Solve by function GetRequest()
-    var request = GetRequest();
-    var argv = request[argv_name];
-    return argv;
-}
-
-function GetRequest() {
     var url = location.search; //获取url中"?"符后的字串
     var theRequest = new Object();
     if (url.indexOf("?") != -1) {
@@ -111,18 +98,9 @@ function GetRequest() {
             theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
         }
     }
-    return theRequest;
-}
-
-function change_text(element, content) {
-    //Get element by params
-    element.innerHTML = content;
-}
-
-function get_element(id) {
-    //Get element by id
-    var x = document.getElementById(id);
-    return x;
+    var request = theRequest;
+    var argv = request[argv_name];
+    return argv;
 }
 
 function getQueryString(name) {
@@ -132,77 +110,51 @@ function getQueryString(name) {
     return null;
 }
 
-function getQueue() {
-    // Get
-    href = window.location.href;
-    console.log(href)
-}
-
 function warmTip() {
     mdui.alert("Please check the things of school before, then go to school.", "Warm tips");
     mdui.alert("The things like your : ID Card , Textbook , The homework of last night ...", "Warm tips");
 }
 
 function enterPage(day) {
-    // Day(intenger)
-    var url = 'perDay.api.html?day=' + day.toString();
-    window.location.href = url
+    window.location.href = 'perDay.api.html?day=' + day.toString()
 }
 
 function enterTomorrowPage() {
     var d = new Date();
     var day = d.getDay();
-    if (day != 7 != 6) {
+    if (day != 7 && day != 6 && day != 5) {
         day = day + 1;
+    } else if (day == 5) {
+        // Friday
+        day = 1
+        mdui.alert('今天是周五，我们将为您显示周一的课程。', '提示') 
     } else if (day == 6) {
-        day = 1;
-        mdui.alert('今天是周六, 我们将为您显示周一的课程。', '提示');
+        day = 1
+        mdui.alert('今天是周六, 我们将为您显示周一的课程。', '提示')
     } else if (day == 7) {
-        day = 1;
-        mdui.alert('今天是周日，我们将为您显示周一的课程。', '提示');
+        day = 1
+        mdui.alert('今天是周日，我们将为您显示周一的课程。', '提示')
     }
-    day = day.toString();
-    enterClassesPage(day);
+    day = day.toString()
+    enterPage(day)
 }
 
 function enterTodayPage() {
-    var d = new Date();
-    var day = d.getDay();
+    var d = new Date()
+    var day = d.getDay()
     if (day) {
-        enterPage(day);
+        enterPage(day)
     } else {
         mdui.alert('我们将为您显示周一的课程。', 'Tips')
     };
 }
 
 function checkContestRisk() {
-    // Check Contest Risk by Date
-    var d = new Date();
-    var day = d.getDay(); // Get Day in a week number
-    switch (day) {
-        case 3:
-            var result = {
-                "type": "Chinese",
-                "risk": true,
-            }
-            return result;
-            break;
-
-        case 5:
-            var result = {
-                "type": "Maths",
-                "risk": true,
-            }
-            return result;
-            break;
-
-        default:
-            return false;
-    }
+    return false
 }
 
 function getFormatedClassesData(day) {
-    var originData = getContent(19);
+    var originData = getContent();
     var classes = [{},
         {
             'name': '',

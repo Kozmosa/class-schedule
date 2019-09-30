@@ -6,3 +6,15 @@
     display: block;
     width: 100%;
 }
+
+.white {
+    color: #ffffff;
+}
+
+.blue {
+    color: #005cbf;
+}
+
+.black {
+    color: #000000;
+}

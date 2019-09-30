@@ -9,9 +9,9 @@ Author: Xuyang1638
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link href="./css/index.css" rel="stylesheet">
-    <link href="./assets/mdui/css/mdui.min.css" rel="stylesheet">
-    <script src="./assets/mdui/js/mdui.min.js"></script>
+    <link href="./main.css" rel="stylesheet">
+    <!-- <link href="./assets/mdui/css/mdui.min.css" rel="stylesheet">
+    <script src="./assets/mdui/js/mdui.min.js"></script> -->
     <title>Class Schedule - By Xuyang1638</title>
 </head>
 
@@ -19,7 +19,8 @@ Author: Xuyang1638
 
     <!-- Toolbar Material -->
     <div class="mdui-toolbar mdui-color-theme">
-        <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#left-drawer'}"><i class="mdui-icon material-icons">menu</i></a>
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#left-drawer'}"><i
+                class="mdui-icon material-icons">menu</i></a>
         <span class="mdui-typo-title">课程表</span>
         <div class="mdui-toolbar-spacer"></div>
         <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>
@@ -30,12 +31,63 @@ Author: Xuyang1638
     <!-- Drawer Material -->
     <div class="mdui-drawer mdui-drawer-close" id="left-drawer">
         <ul class="mdui-list" style="padding-top: 0%">
-            <li class="image">
-                <img class="image" src="https://mdui-aliyun.cdn.w3cbus.com/docs/assets/docs/img/card.jpg">
+            <li class="mdui-list-item mdui-ripple" onclick="LoadClasses(window.calenderData, 1)" mdui-drawer-close>
+                <div class="mdui-list-item-content">
+                    <div class="mdui-list-item-title">
+                        Monday
+                    </div>
+                    <div class="mdui-list-item-text mdui-list-item-one-line">
+                        周一
+                    </div>
+                </div>
+            </li>
+
+            <li class="mdui-list-item mdui-ripple" onclick="LoadClasses(window.calenderData, 2)" mdui-drawer-close>
+                <div class="mdui-list-item-content">
+                    <div class="mdui-list-item-title">
+                        Tuesday
+                    </div>
+                    <div class="mdui-list-item-text mdui-list-item-one-line">
+                        周二
+                    </div>
+                </div>
+            </li>
+
+            <li class="mdui-list-item mdui-ripple" onclick="LoadClasses(window.calenderData, 3)" mdui-drawer-close>
+                <div class="mdui-list-item-content">
+                    <div class="mdui-list-item-title">
+                        Wednesday
+                    </div>
+                    <div class="mdui-list-item-text mdui-list-item-one-line">
+                        周三
+                    </div>
+                </div>
+            </li>
+
+            <li class="mdui-list-item mdui-ripple" onclick="LoadClasses(window.calenderData, 4)" mdui-drawer-close>
+                <div class="mdui-list-item-content">
+                    <div class="mdui-list-item-title">
+                        Thursday
+                    </div>
+                    <div class="mdui-list-item-text mdui-list-item-one-line">
+                        周四
+                    </div>
+                </div>
+            </li>
+
+            <li class="mdui-list-item mdui-ripple" onclick="LoadClasses(window.calenderData, 5)" mdui-drawer-close>
+                <div class="mdui-list-item-content">
+                    <div class="mdui-list-item-title">
+                        Friday
+                    </div>
+                    <div class="mdui-list-item-text mdui-list-item-one-line">
+                        周五
+                    </div>
+                </div>
             </li>
 
             <li class="mdui-list-item mdui-ripple" onclick="window.open('https://github.com/xuyang1638');">
-                <div class="mdui-list-item-avatar"><img src="./assets/author-avatar.png" /></div>
+                <div class="mdui-list-item-avatar"><img src="../../assets/author-avatar.png" /></div>
                 <div class="mdui-list-item-content">
                     <div class="mdui-list-item-title">
                         Author: <a href="https://github.com/xuyang1638" style="color: black;">Xuyang1638</a>
@@ -45,12 +97,14 @@ Author: Xuyang1638
                     </div>
                 </div>
             </li>
-            
-            <li class="mdui-list-item mdui-ripple" onclick="window.open('https://github.com/xuyang1638/class-schedule');">
-                <div class="mdui-list-item-avatar"><img src="./assets/github-avatar.png" /></div>
+
+            <li class="mdui-list-item mdui-ripple"
+                onclick="window.open('https://github.com/xuyang1638/class-schedule');">
+                <div class="mdui-list-item-avatar"><img src="../../assets/github-avatar.png" /></div>
                 <div class="mdui-list-item-content">
                     <div class="mdui-list-item-title">
-                        Github: <a href="https://github.com/xuyang1638/class-schedule" style="color: black;">Class-schedule</a>
+                        Github: <a href="https://github.com/xuyang1638/class-schedule"
+                            style="color: black;">Class-schedule</a>
                     </div>
                     <div class="mdui-list-item-text mdui-list-item-one-line">
                         Open Source in Github
@@ -60,7 +114,8 @@ Author: Xuyang1638
             <li class="mdui-list-item mdui-ripple">Send mail</li>
         </ul>
         <br />
-        <button class="mdui-btn mdui-color-theme mdui-ripple mdui-btn-block" mdui-drawer-close style="text-align: center; position: relative; bottom: 0;">
+        <button class="mdui-btn mdui-color-theme mdui-ripple mdui-btn-block" mdui-drawer-close
+            style="text-align: center; position: relative; bottom: 0;">
             close
         </button>
     </div>
@@ -76,32 +131,32 @@ Author: Xuyang1638
                         <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
                     </div>
                     <div class="mdui-panel-item-body">
-                        <h2 class="black" id="title">Monday | 星期一</h2>
+                        <h2 class="black" id="title">Monday</h2>
                         <ul class="mdui-list container">
                             <li class="mdui-list-item mdui-ripple mdui-color-pink">
                                 <div class="mdui-list-item-content">
-                                    <div class="mdui-list-item-title" id="class-1">语文</div>
+                                    <div class="mdui-list-item-title" id="class-1">Loading</div>
                                 </div>
                                 <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
                             </li>
                             <p></p>
                             <li class="mdui-list-item mdui-ripple mdui-color-pink">
                                 <div class="mdui-list-item-content">
-                                    <div class="mdui-list-item-title" id="class-2">英语</div>
+                                    <div class="mdui-list-item-title" id="class-2">Loading</div>
                                 </div>
                                 <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
                             </li>
                             <p></p>
                             <li class="mdui-list-item mdui-ripple mdui-color-pink">
                                 <div class="mdui-list-item-content">
-                                    <div class="mdui-list-item-title" id="class-3">英语</div>
+                                    <div class="mdui-list-item-title" id="class-3">Loading</div>
                                 </div>
                                 <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
                             </li>
                             <p></p>
                             <li class="mdui-list-item mdui-ripple mdui-color-pink">
                                 <div class="mdui-list-item-content">
-                                    <div class="mdui-list-item-title" id="class-4">信息</div>
+                                    <div class="mdui-list-item-title" id="class-4">Loading</div>
                                 </div>
                                 <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
                             </li>
@@ -115,28 +170,28 @@ Author: Xuyang1638
                             <p></p>
                             <li class="mdui-list-item mdui-ripple mdui-color-pink">
                                 <div class="mdui-list-item-content">
-                                    <div class="mdui-list-item-title" id="class-5">美术</div>
+                                    <div class="mdui-list-item-title" id="class-5">Loading</div>
                                 </div>
                                 <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
                             </li>
                             <p></p>
                             <li class="mdui-list-item mdui-ripple mdui-color-pink">
                                 <div class="mdui-list-item-content">
-                                    <div class="mdui-list-item-title" id="class-6">数学</div>
+                                    <div class="mdui-list-item-title" id="class-6">Loading</div>
                                 </div>
                                 <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
                             </li>
                             <p></p>
                             <li class="mdui-list-item mdui-ripple mdui-color-pink">
                                 <div class="mdui-list-item-content">
-                                    <div class="mdui-list-item-title" id="class-7">班会</div>
+                                    <div class="mdui-list-item-title" id="class-7">Loading</div>
                                 </div>
                                 <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
                             </li>
                             <p></p>
                             <li class="mdui-list-item mdui-ripple mdui-color-indigo">
                                 <div class="mdui-list-item-content">
-                                    <div class="mdui-list-item-title" id="class-night">班会</div>
+                                    <div class="mdui-list-item-title" id="class-8">Loading</div>
                                 </div>
                                 <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
                             </li>
@@ -148,40 +203,21 @@ Author: Xuyang1638
             </div>
         </div>
     </div>
-    
+
     <!-- Javascript Programs Here -->
-    <script src="js/main.js"></script>
+    <script src="./env.js"></script>
+    <script src="./main.js"></script>
+    <script src="https://cdn.bootcss.com/mdui/0.4.3/js/mdui.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/mdui/0.4.3/css/mdui.min.css">
     <script>
-        //Solve URL Arguments
-        var day = getQueryString("day");
-
-        //Catch Excepation 
-        if (day == '1' || day == '2' || day == '3' || day == '4' || day == '5') {} else {
-            mdui.alert('你输入了错误的天数，重新试一下吧！', 'Exceptions');
-            console.log('你输入了错误的天数，重新试一下吧！');
-        }
-
-        //Get data from Javascript JSON
-        var content = getContent(day);
-
-        //Change Return
-        for (var i = 0; i < 7; i++) {
-            document.getElementById('class-' + (i+1).toString()).innerText = content[i]; // Change content
-        }
-
-        const nightClassEl = document.querySelector('#class-night')
-        if(content[7] === "N/A"){
-            nightClassEl.innerText = '历史'
-        } 
-        nightClassEl.innerText = content[7]
-
-        //Change Title
-        var x = document.getElementById('title');
-        x.innerText = getTitle(day);
-
+        // DynamicLoading.css('https://cdn.bootcss.com/mdui/0.4.3/css/mdui.min.css')
+        // DynamicLoading.js('https://cdn.bootcss.com/mdui/0.4.3/js/mdui.min.js')
         mdui.snackbar({
-            message: "软件开发：武宁二中初一(19)班 徐阳",
+            message: "Developed by Kozumi"
         });
+
+        cdata = window.calenderData
+        LoadClasses(cdata, 'today')
 
         if (window.console) {
             console.groupCollapsed('%c课程表 by Xuyang1638', 'color:#009a61; font-size: 28px; font-weight: 300');
