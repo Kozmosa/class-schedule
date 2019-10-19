@@ -18,7 +18,7 @@ Author: Xuyang1638
 <body class="mdui-theme-primary-pink">
 
     <!-- Toolbar Material -->
-    <div class="mdui-toolbar mdui-color-theme">
+    <div class="mdui-toolbar mdui-color-theme" id='toolbar'>
         <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#left-drawer'}"><i class="mdui-icon material-icons">menu</i></a>
         <span class="mdui-typo-title">课程表</span>
         <div class="mdui-toolbar-spacer"></div>
@@ -153,13 +153,16 @@ Author: Xuyang1638
     <script src="js/main.js"></script>
     <script>
         //Solve URL Arguments
+        var toolbar = getQueryString('toolbarStatus')
         var day = getQueryString("day");
+        if(toolbar == 'false') document.querySelector('body').removeChild(document.querySelector('#toolbar'))
 
         //Catch Excepation 
-        if (day == '1' || day == '2' || day == '3' || day == '4' || day == '5') {} else {
+        if (day == '1' || day == '2' || day == '3' || day == '4' || day == '5' || day == '6' || day == '7') {} else {
             mdui.alert('你输入了错误的天数，重新试一下吧！', 'Exceptions');
             console.log('你输入了错误的天数，重新试一下吧！');
         }
+        if(day == '6' || day == '7') day = '1'
 
         //Get data from Javascript JSON
         var content = getContent(day);
